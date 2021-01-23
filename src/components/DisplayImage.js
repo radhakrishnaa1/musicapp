@@ -4,9 +4,12 @@ import { withStyles } from "@material-ui/core/styles";
 // import GameOverDialog from "./GameOverDialog";
 // import { Button } from "@material-ui/core";
 import ReactAudioPlayer from "react-audio-player";
+import { withRouter } from "react-router";
+
 // import DemoMusic from "./DemoMusic";
 import { Avatar, Paper } from "material-ui";
-
+import GoBack from "@material-ui/icons/KeyboardBackspace";
+import songs from "../constants/musicList.json";
 const styles = (theme) => ({
   large: {
     width: 500,
@@ -37,35 +40,67 @@ class DisplayImage extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      timeLeft: { minutes: "...", seconds: ".." },
-      openDialog: false,
-      gameOver: false,
-      score: 0,
+      id: "",
+      name: "",
+      songurl: "",
+      imageurl: "",
+      data: [],
     };
   }
-  componentDidMount() {}
-
+  componentDidMount() {
+    this.setInitial(this.props);
+  }
+  componentWillReceiveProps(next) {
+    this.setInitial(next);
+  }
+  setInitial = (props) => {
+    console.log(props);
+    this.setState({
+      id: props.match.params.id,
+      loader: false,
+      data: songs.filter((data) => data.id === props.match.params.id),
+    });
+  };
   render() {
     const { classes, height, width } = this.props;
-    console.log(this.props.height, " height", this.props.width);
+    console.log(this.state.data);
     return (
-      <div
-        style={{
-          textAlign: "center",
-          width: this.props.width,
-        }}
-      >
-        <h1 style={{ marginTop: 40, marginBottom: 50 }}>Start Playing Music</h1>
-        <div>
-          Music app
-          <Avatar src="images/realmeImage.png" style={internalStyle.imageMusic()} />
+      <div>
+        <div
+          onClick={() => {
+            this.props.history.goBack();
+          }}
+        >
+          <GoBack />
         </div>
-        <Paper style={internalStyle.playerStyle(height)}>
-          <ReactAudioPlayer src="musics/itsrealme.mp3" autoPlay controls />{" "}
-        </Paper>
+        {this.state.loader ? (
+          <div>Loading...</div>
+        ) : (
+          <div
+            style={{
+              textAlign: "center",
+              width: this.props.width,
+            }}
+          >
+            <h1 style={{ marginBottom: 50 }}>{songs.find((data) => data.id === this.props.match.params.id).name} </h1>
+            <div>
+              <Avatar
+                src={songs.find((data) => data.id === this.props.match.params.id).imageUrl}
+                style={internalStyle.imageMusic()}
+              />
+            </div>
+            <Paper style={internalStyle.playerStyle(height)}>
+              <ReactAudioPlayer
+                src={songs.find((data) => data.id === this.props.match.params.id).musicUrl}
+                autoPlay
+                controls
+              />{" "}
+            </Paper>
+          </div>
+        )}
       </div>
     );
   }
 }
 
-export default withStyles(styles)(DisplayImage);
+export default withRouter(withStyles(styles)(DisplayImage));

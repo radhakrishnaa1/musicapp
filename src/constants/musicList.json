@@ -1,26 +1,50 @@
 [
   {
-    "id": 1,
-    "name": "It's Real Me ",
-    "musicUrl": "musics/itsrealme.mp3",
-    "imageUrl": "images/realmeImage.png"
+    "id": "1",
+    "name": "Kuch Kuch Hota Hai",
+    "musicUrl": "/musics/kkhh.mp3",
+    "imageUrl": "/images/kkhh.jpg"
   },
   {
-    "id": 2,
-    "name": "It's Real Me ",
-    "musicUrl": "musics/itsrealme.mp3",
-    "imageUrl": "images/realmeImage.png"
+    "id": "2",
+    "name": "The Maari Swag ",
+    "musicUrl": "/musics/the-maari-swag.mp3",
+    "imageUrl": "/images/swagMix.jpg"
   },
   {
-    "id": 3,
-    "name": "It's Real Me ",
-    "musicUrl": "musics/itsrealme.mp3",
-    "imageUrl": "images/realmeImage.png"
+    "id": "3",
+    "name": "Bollywood Nonstop Disco Dandiya",
+    "musicUrl": "/musics/dandiya.mp3",
+    "imageUrl": "/images/dandiya.jpg"
   },
   {
-    "id": 4,
+    "id": "4",
     "name": "It's Real Me ",
-    "musicUrl": "musics/itsrealme.mp3",
-    "imageUrl": "images/realmeImage.png"
+    "musicUrl": "/musics/itsrealme.mp3",
+    "imageUrl": "/images/realmeImage.png"
+  },
+  {
+    "id": "5",
+    "name": "Kuch Kuch Hota Hai",
+    "musicUrl": "/musics/kkhh.mp3",
+    "imageUrl": "/images/kkhh.jpg"
+  },
+  {
+    "id": "6",
+    "name": "The Maari Swag ",
+    "musicUrl": "/musics/the-maari-swag.mp3",
+    "imageUrl": "/images/swagMix.jpg"
+  },
+  {
+    "id": "7",
+    "name": "Bollywood Nonstop Disco Dandiya",
+    "musicUrl": "/musics/dandiya.mp3",
+    "imageUrl": "/images/dandiya.jpg"
+  },
+  {
+    "id": "8",
+    "name": "It's Real Me ",
+    "musicUrl": "/musics/itsrealme.mp3",
+    "imageUrl": "/images/realmeImage.png"
   }
 ]
