@@ -9,8 +9,11 @@
     "material-ui": "^0.20.2",
     "moment": "^2.24.0",
     "react": "^16.8.6",
+    "react-audio-player": "^0.14.0",
     "react-big-calendar": "^0.20.4",
     "react-dom": "^16.8.6",
+    "react-hot-loader": "^4.13.0",
+    "react-jinke-music-player": "^4.21.1",
     "react-router-dom": "^5.0.0",
     "react-scripts": "3.0.1",
     "react-svg-piechart": "^2.4.0"

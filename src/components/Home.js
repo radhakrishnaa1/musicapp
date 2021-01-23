@@ -1,26 +1,25 @@
 import React from "react";
 import Button from "@material-ui/core/Button";
 import { withRouter } from "react-router";
-import { DISPLAYIMAGE } from "../constants/routes";
-import { Avatar } from "material-ui";
+import { DISPLAYIMAGE, PLAYLIST } from "../constants/routes";
 import Paper from "@material-ui/core/Paper";
 import PlayArrow from "@material-ui/icons/PlayCircleFilled";
-const internalStyle = {
-  musicLogo: () => ({
-    width: "30%",
-    height: "30%",
-    border: "1px solid red",
-    margin: "auto",
-    borderRadius: 100,
-  }),
-};
+// const internalStyle = {
+//   musicLogo: () => ({
+//     width: "30%",
+//     height: "30%",
+//     border: "1px solid red",
+//     margin: "auto",
+//     borderRadius: 100,
+//   }),
+// };
 class Home extends React.Component {
   render() {
     return (
       <div style={{ textAlign: "center", width: this.props.width }}>
         <h1>Welcome Music App </h1>
 
-        <div id="musicLogo" onClick={() => this.props.history.push(DISPLAYIMAGE)}>
+        <div id="musicLogo" onClick={() => this.props.history.push(PLAYLIST)}>
           {/* <div style={internalStyle.musicLogo()}> */}
           <Paper
             elevation={5}

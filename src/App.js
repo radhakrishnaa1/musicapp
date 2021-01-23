@@ -6,7 +6,8 @@ import withAuthentication from "./hoc/withAuthentication";
 
 import DisplayImage from "./components/DisplayImage";
 import Home from "./components/Home";
-import { DISPLAYIMAGE } from "./constants/routes";
+import { DISPLAYIMAGE, PLAYLIST } from "./constants/routes";
+import PlayList from "./components/PlayList";
 function App(props) {
   const [width, setWidth] = React.useState(window.innerWidth);
   const [height, setHeight] = React.useState(window.innerHeight);
@@ -26,11 +27,12 @@ function App(props) {
     <div>
       <Router>
         <Route path="/" exact render={(props) => <Home {...props} width={width} height={height} />} />
-        <Route
+        <Route path={PLAYLIST} exact render={(props) => <PlayList {...props} width={width} height={height} />} />
+        {/* <Route
           path={DISPLAYIMAGE}
           exact
           render={(props) => <DisplayImage {...props} width={width} height={height} />}
-        />
+        /> */}
       </Router>
     </div>
   );
