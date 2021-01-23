@@ -3,42 +3,40 @@ import Button from "@material-ui/core/Button";
 import { withRouter } from "react-router";
 import { DISPLAYIMAGE } from "../constants/routes";
 import { Avatar } from "material-ui";
-
+import Paper from "@material-ui/core/Paper";
+import PlayArrow from "@material-ui/icons/PlayCircleFilled";
+const internalStyle = {
+  musicLogo: () => ({
+    width: "30%",
+    height: "30%",
+    border: "1px solid red",
+    margin: "auto",
+    borderRadius: 100,
+  }),
+};
 class Home extends React.Component {
-  componentDidMount() {
-    this.variableExplanation();
-  }
-  variableExplanation = () => {
-    let letType = 10;
-    for (let i = 0; i < 10; i++) {
-      var varType = 20;
-    }
-
-    const constTpe = [{ id: 123, name: "riya" }];
-    constTpe.push({ id: 1, name: "rahul" });
-    console.log("let ", letType);
-    console.log("var ", varType);
-    console.log("const ", constTpe);
-    // this.method();
-  };
-  // method = () => {
-  //   console.log("varMethod ", varType);
-  // };
   render() {
     return (
       <div style={{ textAlign: "center", width: this.props.width }}>
-        <h1>Welcome to Chidiya udd</h1>
+        <h1>Welcome Music App </h1>
 
-        <div>
-          {" "}
-          <img
-            src="cloud.jpg"
-            style={{ width: this.props.width > 500 ? null : "100%", height: "60%", marginTop: "8%" }}
-          />
+        <div id="musicLogo" onClick={() => this.props.history.push(DISPLAYIMAGE)}>
+          {/* <div style={internalStyle.musicLogo()}> */}
+          <Paper
+            elevation={5}
+            style={{
+              width: "fit-content",
+              height: "fit-content",
+              borderRadius: 130,
+              margin: "auto",
+              marginTop: "10vh",
+            }}
+          >
+            <PlayArrow style={{ width: 240, height: 240, margin: "auto", color: "gray" }} />
+          </Paper>
+          {/* </div> */}
         </div>
-        <Button style={{ margin: 50 }} onClick={() => this.props.history.push(DISPLAYIMAGE)}>
-          Next{" "}
-        </Button>
+        <Button style={{ margin: 50 }}>Click above for Next</Button>
       </div>
     );
   }
